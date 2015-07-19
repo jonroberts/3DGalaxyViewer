@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <title>2MRS Galaxies</title>
+        <script type="application/javascript" src="libs/c3dl/c3dapi.js" ></script>
+		<script type="application/javascript" src="libs/jquery-1.7.1.min.js"></script>
+
+		<link  href="css/style.css" media="all" rel="stylesheet" type="text/css" />
+</head>
+
+<body onload="updateZTerms();">
+    	<div id="window">
+        <!-- Add a canvas element to the page. It is scripted by using its id -->
+        <canvas id="galaxyViewer" width="800" height="680" onMouseOver="disableScroll()" onMouseOut="enableScroll()"></canvas>
+        </div>
+        <div id="details">
+        <ul>
+	        <li>Click and drag to rotate the galaxy set.</li>
+	        <li>Scroll to zoom in/out</li>
+        </ul>
+        <p>Connecting lines are shaded red to green to show the initial
+        and final locations of the galaxy respectively. Click on a galaxy for more details</p>
+        <ul style="list-style-type: none;">
+        <li><div class="square" id="z_c"></div> location from redshift</li>
+        <li><div class="square" id="z_r"></div> independently measured location</li>
+        <li><div class="square" id="z"></div> uncorrected galaxies</li>
+        </ul>
+    
+        <h4>Selected Galaxy</h4>
+		<div id="galID" class="galDetails">ID:	--<span id="gal_id"></span></div>
+        <div id="galL" class="galDetails" title="Galactic longitude (degrees)">l:	--</div>
+        <div id="galB" class="galDetails" title="Galactic latitude (degrees)">b:	--</div>
+        <div id="galZ" class="galDetails" title="Measured redshift">z_c:	--</div>
+        <div id="galZEff" class="galDetails" title="Redshift from independent distance measurement">z_r:	--</div>
+        <br/>
+
+        <button onclick="toggleOrigGals()" id="origLocButton" style="width:150px">Hide Original Locations</button>
+        <button onclick="toggleFinalGals()" id="finalLocButton" style="width:150px">Show Final Locations</button>
+        <br/>
+        <button onclick="toggleUncorrectedGals()" id="unCorrGalsButton" style="width:150px">Show Uncorrected Gals</button>
+		<button onclick="toggleLines()" id="linesButton" style="width:150px">Show Lines</button>
+        <br/>
+
+		<h4>Search by Galaxy</h4>
+        <form id="selectGalaxy">
+        <span style="white-space: pre">Galaxy ID:	</span>
+		<input type="text" name="galaxyID" id="galaxyID" style="width:150px" autocomplete="on" value="12312403+2546299"/>
+		<button style="display: inline; margin-left: auto;" class="submit" type="submit" value="Send">Go</button>
+        </form>
+        <h4>Search by Location</h4>
+        <form id="jumpToLB">
+        <span style="white-space: pre">l: </span>
+		<input type="text" name="l" id="galaxyL" style="width:50px"/>
+        <span style="white-space: pre">b: </span>
+		<input type="text" name="b" id="galaxyB" style="width:50px"/>
+        <span style="white-space: pre">z: </span>
+		<input type="text" name="z" id="galaxyZ" style="width:50px"/>
+		<button style="display: inline" class="submit" type="submit" value="Send">Go</button>
+        </form>
+        
+		</div>
+
+        <script src="data/GalDef,0,0.06.js"></script>
+        <script type="application/javascript" src="libs/OrbitalView.js"></script>
+        <!--<script type="application/javascript" src="libs/asteroids.js"></script>-->
+    </body>
+</html>

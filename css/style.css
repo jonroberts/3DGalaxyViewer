@@ -1,0 +1,65 @@
+body, html {
+	margin:0;
+	padding:0;
+	color:#000;
+	background:white;
+	font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+	font-weight: 300;
+}
+        
+.galDetails{
+	white-space:pre;
+}
+
+#galaxyViewer{
+	border: none;
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	margin:0;	
+}
+
+#window {
+	float:left;
+	width:800px;
+	height: 680px;
+	padding:0px;
+}
+		
+#details {
+	float:left;
+	width:350px;
+	padding:10px;
+}
+
+div.square{
+	/*background-color: #7f7f7f;*/
+	display: inline-block;
+	border: #000000;
+	border-width: 1px;
+	border-style: solid;
+	height: 10px;
+	width: 10px;
+	margin-right: 5px;
+}
+
+div#z{
+	background-color: #4c4c4c;
+}
+
+div#z_c{
+	background-color: #991515;	
+}
+
+div#z_r{
+	background-color: #159915;	
+}
+
+
+
+
+
+
+
+
+
